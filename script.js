@@ -88,8 +88,6 @@ var murals = [
         id: "mural14",
         gameUrl: "WebGRFire/index.html",
         hasGame: true,
-        panorama: 'https://i.imgur.com/sEkpry4.jpeg',
-        hasPanorama: false,
         info: 'Изображение Александра Горбатова по пр-ту Космонавтов, 32, г. Гомель',
         biography: {
             name: 'В преддверии празднования 81-й годовщины освобождения Гомеля от немецко-фашистских захватчиков поступило предложение о создании мурала в честь Героя Советского Союза Александра Горбатова.',
@@ -361,7 +359,14 @@ function launchConfetti() {
             document.getElementById('muralModal').style.display = "block";
 
 marker.on('click', function() {
- if (mural.hasPanorama) {
+marker.on('click', function() {
+    if (mural.hasGame) {
+        modalTitle.innerText = mural.biography.name;
+        document.getElementById('modal-content').innerHTML = `
+            <iframe src="${mural.gameUrl}" style="width:100%; height:600px; border:none;"></iframe>
+        `;
+        modal.style.display = "block";
+    } else if (mural.hasPanorama) {
         pannellum.viewer('panorama', {
             type: 'equirectangular',
             panorama: mural.panorama,
@@ -372,7 +377,7 @@ marker.on('click', function() {
     } else {
         panoramaContainer.style.display = "none";
     }
-      });
+});
 
             document.getElementById('route-btn').onclick = function() {
                 navigator.geolocation.getCurrentPosition(function(position) {
