@@ -365,6 +365,7 @@ function launchConfetti() {
         document.getElementById('modal-content').innerHTML = `
             <iframe src="${mural.gameUrl}" style="width:100%; height:600px; border:none;"></iframe>
         `;
+        panoramaContainer.style.display = "none"; // Скрываем панораму, если есть игра
         modal.style.display = "block";
     } else if (mural.hasPanorama) {
         pannellum.viewer('panorama', {
@@ -374,8 +375,11 @@ function launchConfetti() {
             showZoomCtrl: false
         });
         panoramaContainer.style.display = "block";
+        document.getElementById('modal-content').innerHTML = ''; // Убираем iframe игры, если есть панорама
+        modal.style.display = "block";
     } else {
         panoramaContainer.style.display = "none";
+        document.getElementById('modal-content').innerHTML = ''; // Очищаем модальное окно
     }
 });
 
