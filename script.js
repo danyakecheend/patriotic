@@ -88,8 +88,6 @@ var murals = [
         id: "mural15",
         gameUrl: "WebGLTank/index.html",
         hasGame: true,
-        panorama: 'https://i.imgur.com/sEkpry4.jpeg',
-        hasPanorama: false,
         info: 'Изображение Емельяна Барыкина на ул.Барыкина, 94, г. Гомель',
         biography: {
             name: 'В преддверии 75-й годовщины победы в Великой Отечественной на доме № 94 по улице Барыкина был создан мурал с изображением Емельяна Игнатьевича.',
