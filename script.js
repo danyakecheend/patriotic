@@ -358,7 +358,13 @@ function launchConfetti() {
             document.getElementById('modal-bio').innerText = mural.biography.bio;
             document.getElementById('muralModal').style.display = "block";
 
-    if (mural.hasPanorama) {
+    if (mural.hasGame) {
+        modalTitle.innerText = mural.biography.name;
+        document.getElementById('modal-content').innerHTML = `
+            <iframe src="${mural.gameUrl}" style="width:100%; height:600px; border:none;"></iframe>
+        `;
+        modal.style.display = "block";
+    } else if (mural.hasPanorama) {
         pannellum.viewer('panorama', {
             type: 'equirectangular',
             panorama: mural.panorama,
@@ -369,6 +375,7 @@ function launchConfetti() {
     } else {
         panoramaContainer.style.display = "none";
     }
+});
 
             document.getElementById('route-btn').onclick = function() {
                 navigator.geolocation.getCurrentPosition(function(position) {
