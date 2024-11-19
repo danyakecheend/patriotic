@@ -86,8 +86,6 @@ var murals = [
         coords: [52.425934, 31.010007],
         image: 'images/barikinmural.jpg',
         id: "mural1",
-        panorama: 'https://i.imgur.com/sEkpry4.jpeg',
-        hasPanorama: false,
         gameUrl: "WebGLTank/index.html",
         hasGame: true,
         info: 'Изображение Емельяна Барыкина на ул.Барыкина, 94, г. Гомель',
