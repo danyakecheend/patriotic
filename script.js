@@ -567,8 +567,6 @@ window.addEventListener('scroll', function() {
         });
     }
 
-});
-
 document.querySelectorAll('.event-card').forEach(card => {
     card.addEventListener('mouseover', () => {
         card.style.transform = 'scale(1.05)';
