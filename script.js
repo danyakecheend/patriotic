@@ -88,6 +88,7 @@ var murals = [
         id: "mural15",
         gameUrl: "WebGLTank/index.html",
         hasGame: true,
+        panorama: 'https://i.imgur.com/sEkpry4.jpeg',
         hasPanorama: false,
         info: 'Изображение Емельяна Барыкина на ул.Барыкина, 94, г. Гомель',
         biography: {
