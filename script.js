@@ -358,8 +358,6 @@ function launchConfetti() {
             document.getElementById('modal-bio').innerText = mural.biography.bio;
             document.getElementById('muralModal').style.display = "block";
 
-marker.on('click', function() {
-marker.on('click', function() {
     if (mural.hasGame) {
         modalTitle.innerText = mural.biography.name;
         document.getElementById('modal-content').innerHTML = `
