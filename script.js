@@ -389,7 +389,6 @@ function launchConfetti() {
     } else {
         panoramaContainer.style.display = "none";
     }
-            });
 
             document.getElementById('route-btn').onclick = function() {
                 navigator.geolocation.getCurrentPosition(function(position) {
