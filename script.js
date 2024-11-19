@@ -576,4 +576,4 @@ document.querySelectorAll('.event-card').forEach(card => {
         card.style.transform = 'scale(1)';
     });
 });
-
+});
