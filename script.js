@@ -83,7 +83,7 @@ function addCloseButtonToRoutePanel() {
 }
 var murals = [
         {
-        coords: [52.418282, 30.976864],
+        coords: [52.425934, 31.010007],
         image: 'images/barikinmural.jpg',
         id: "mural1",
         panorama: 'https://i.imgur.com/sEkpry4.jpeg',
