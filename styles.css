@@ -956,19 +956,18 @@ video {
 .btn-route:hover {
     background-color: #357ae8;
 }
-/* Стили для контейнера маршрута с эффектом увеличения */
+
 .leaflet-routing-container {
     position: relative;
     transition: transform 0.3s;
 }
 
 .leaflet-routing-container:hover {
-    transform: scale(1.02); /* Легкое увеличение всего контейнера при наведении */
+    transform: scale(1.02);
 }
 
-/* Стили для кнопки закрытия */
 .close-route {
-    background: linear-gradient(135deg, #ff4d4d, #ff3333); /* Градиентный фон для кнопки */
+    background: linear-gradient(135deg, #ff4d4d, #ff3333);
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -978,21 +977,25 @@ video {
     font-weight: bold;
     transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     text-align: center;
-    width: 80%; /* Уменьшенная ширина для центрирования */
-    margin: 20px auto; /* Центрирование кнопки */
-    display: block; /* Выравнивание по центру */
+    width: 80%;
+    margin: 20px auto;
+    display: block;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Эффекты при наведении на кнопку */
 .close-route:hover {
-    background: linear-gradient(135deg, #ff6666, #ff4d4d); /* Изменение градиента при наведении */
-    transform: scale(1.1); /* Увеличение кнопки при наведении */
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Более сильная тень при наведении */
+    background: linear-gradient(135deg, #ff6666, #ff4d4d);
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* Эффект нажатия на кнопку */
 .close-route:active {
-    transform: scale(0.95); /* Легкое уменьшение при нажатии */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Меньшая тень при нажатии */
+    transform: scale(0.95);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+iframe {
+    max-width: 100%;
+    height: 600px;
+    border: none;
 }
