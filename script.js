@@ -88,6 +88,7 @@ var murals = [
         id: "mural14",
         gameUrl: "WebGRFire/index.html",
         hasGame: true,
+        panorama: 'https://i.imgur.com/sEkpry4.jpeg',
         hasPanorama: false,
         info: 'Изображение Александра Горбатова по пр-ту Космонавтов, 32, г. Гомель',
         biography: {
