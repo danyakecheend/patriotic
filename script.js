@@ -82,6 +82,19 @@ function addCloseButtonToRoutePanel() {
     }, 500);
 }
 var murals = [
+     {
+        coords: [52.425880, 31.009583],
+        image: 'images/gorbatov.jpg',
+        id: "mural14",
+        gameUrl: "WebGRFire/index.html",
+        hasGame: true,
+        info: 'Изображение Александра Горбатова по пр-ту Космонавтов, 32, г. Гомель',
+        biography: {
+            name: 'В преддверии празднования 81-й годовщины освобождения Гомеля от немецко-фашистских захватчиков поступило предложение о создании мурала в честь Героя Советского Союза Александра Горбатова.',
+            bio: 'Александр Васильевич Горбатов (1891–1973) — советский военачальник, генерал армии, Герой Советского Союза. Родился 9 марта 1891 года в деревне Пахотино, в крестьянской семье. В 1912 году был призван в армию, участвовал в Первой мировой войне, а затем в Гражданской войне на стороне Красной армии. В 1937 году подвергся репрессиям, но в 1941 году был освобожден и вернулся на фронт. Во время Великой Отечественной войны командовал армиями, участвовал в освобождении Польши и Германии. 29 мая 1945 года получил звание Героя Советского Союза за героизм и умелое командование войсками. После войны занимал руководящие должности, в 1958 году ушел в отставку. Умер 7 декабря 1973 года в Москве.',
+            photo: 'images/Gorbatovreal.jpg'
+        }
+    },
     {
         coords: [52.418282, 30.976864],
         image: 'images/barikinmural.jpg',
@@ -345,7 +358,14 @@ function launchConfetti() {
             document.getElementById('modal-bio').innerText = mural.biography.bio;
             document.getElementById('muralModal').style.display = "block";
 
-    if (mural.hasPanorama) {
+marker.on('click', function() {
+    if (mural.hasGame) {
+        modalTitle.innerText = mural.biography.name;
+        document.getElementById('modal-content').innerHTML = `
+            <iframe src="${mural.gameUrl}" style="width:100%; height:600px; border:none;"></iframe>
+        `;
+        modal.style.display = "block";
+    } else if (mural.hasPanorama) {
         pannellum.viewer('panorama', {
             type: 'equirectangular',
             panorama: mural.panorama,
