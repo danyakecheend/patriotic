@@ -384,7 +384,6 @@ function launchConfetti() {
             panorama: mural.panorama,
             autoLoad: true,
             showZoomCtrl: false
-                });
         panoramaContainer.style.display = "block";
     } else {
         panoramaContainer.style.display = "none";
