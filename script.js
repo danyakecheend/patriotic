@@ -85,9 +85,10 @@ var murals = [
         {
         coords: [52.425934, 31.010007],
         image: 'images/barikinmural.jpg',
-        id: "mural1",
+        id: "mural15",
         gameUrl: "WebGLTank/index.html",
         hasGame: true,
+        hasPanorama: false,
         info: 'Изображение Емельяна Барыкина на ул.Барыкина, 94, г. Гомель',
         biography: {
             name: 'В преддверии 75-й годовщины победы в Великой Отечественной на доме № 94 по улице Барыкина был создан мурал с изображением Емельяна Игнатьевича.',
