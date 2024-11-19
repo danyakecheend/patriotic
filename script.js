@@ -379,7 +379,6 @@ function launchConfetti() {
         panoramaContainer.style.display = "none"; // Скрываем панораму
         document.getElementById('modal-content').innerHTML = ''; // Очищаем контент
     }
-});
 
             document.getElementById('route-btn').onclick = function() {
                 navigator.geolocation.getCurrentPosition(function(position) {
@@ -556,6 +555,7 @@ window.addEventListener('scroll', function() {
    "retina_detect": true
         });
     }
+});
 
 document.querySelectorAll('.event-card').forEach(card => {
     card.addEventListener('mouseover', () => {
