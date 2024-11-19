@@ -82,19 +82,19 @@ function addCloseButtonToRoutePanel() {
     }, 500);
 }
 var murals = [
-     {
-        coords: [52.425880, 31.009583],
-        image: 'images/gorbatov.jpg',
-        id: "mural14",
-        gameUrl: "WebGLTank/index.html",
+        {
+        coords: [52.418282, 30.976864],
+        image: 'images/barikinmural.jpg',
+        id: "mural1",
         panorama: 'https://i.imgur.com/sEkpry4.jpeg',
         hasPanorama: false,
+        gameUrl: "WebGLTank/index.html",
         hasGame: true,
-        info: 'Изображение Александра Горбатова по пр-ту Космонавтов, 32, г. Гомель',
+        info: 'Изображение Емельяна Барыкина на ул.Барыкина, 94, г. Гомель',
         biography: {
-            name: 'В преддверии празднования 81-й годовщины освобождения Гомеля от немецко-фашистских захватчиков поступило предложение о создании мурала в честь Героя Советского Союза Александра Горбатова.',
-            bio: 'Александр Васильевич Горбатов (1891–1973) — советский военачальник, генерал армии, Герой Советского Союза. Родился 9 марта 1891 года в деревне Пахотино, в крестьянской семье. В 1912 году был призван в армию, участвовал в Первой мировой войне, а затем в Гражданской войне на стороне Красной армии. В 1937 году подвергся репрессиям, но в 1941 году был освобожден и вернулся на фронт. Во время Великой Отечественной войны командовал армиями, участвовал в освобождении Польши и Германии. 29 мая 1945 года получил звание Героя Советского Союза за героизм и умелое командование войсками. После войны занимал руководящие должности, в 1958 году ушел в отставку. Умер 7 декабря 1973 года в Москве.',
-            photo: 'images/Gorbatovreal.jpg'
+            name: 'В преддверии 75-й годовщины победы в Великой Отечественной на доме № 94 по улице Барыкина был создан мурал с изображением Емельяна Игнатьевича.',
+            bio: 'Барыкин Емельян Игнатьевич (1902 г., д. Тросна Жуковского района Брянской области – 1951 г.), один из организаторов и руководителей подполья и партизанского движения на территории Гомельской области во время Великой Отечественной войны, Герой Советского Союза (1944 г.). Участвовал в создании Гомельского полка народного ополчения (июль 1941 г.), и партизанского отряда «Большевик» (август 1941 г.). Похоронен в г.Гомеле на площади Труда у Вечного огня.',
+            photo: 'images/barikinP.jpg'
         }
     },
     {
@@ -103,7 +103,6 @@ var murals = [
         id: "mural1",
         panorama: 'https://i.imgur.com/sEkpry4.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Емельяна Барыкина на ул.Барыкина, 94, г. Гомель',
         biography: {
             name: 'В преддверии 75-й годовщины победы в Великой Отечественной на доме № 94 по улице Барыкина был создан мурал с изображением Емельяна Игнатьевича.',
@@ -117,7 +116,6 @@ var murals = [
         id: "mural2",
         panorama: 'https://i.imgur.com/mynStMG.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Константина Рокоссовского на ул.Ильича, 106, г. Гомель',
         biography: {
             name: 'В Гомеле появился 30-метровый мурал Константина Рокоссовского – легендарного полководца, дважды героя Советского Союза.',
@@ -131,7 +129,6 @@ var murals = [
         id: "mural3",
         panorama: 'https://i.imgur.com/FrH3gTr.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Николая Зебницкого на ул.Советской, 145, г. Гомель',
         biography: {
             name: 'В преддверии 80-летия освобождения Гомеля от немецко-фашистских захватчиков, председатель Гомельского горисполкома Владимира Привалова принял участие в открытии муралов в честь Героя Советского Союза Николая Васильевича Зебницкого',
@@ -145,7 +142,6 @@ var murals = [
         id: "mural4",
         panorama: 'https://i.imgur.com/yFxutm4.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Ивана Федюнинского на ул.Советской, 157/2, г. Гомель',
         biography: {
             name: 'В преддверии 80 летия освобождения Гомеля от немецко-фашистских захватчиков в городе появился новый мурал в честь генерала армии Героя Советского Союза почетного гражданина Гомеля Ивана Ивановича Федюнинского',
@@ -159,7 +155,6 @@ var murals = [
         id: "mural5",
         panorama: 'https://i.imgur.com/iIQ7OT8.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Кирилла Мазурова на ул.Мазурова, 4к/2, г. Гомель',
         biography: {
             name: 'Ко 800 летию города торцы двух домов на улице Мазурова украсило очередное граффити с изображением знаковой для Гомеля личности. Мурал посвящен советскому партийному деятелю Кириллу Мазурову.',
@@ -173,7 +168,6 @@ var murals = [
         id: "mural6",
         panorama: 'https://i.imgur.com/WxvacEU.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Илья Кожара на ул.Кожара, 2, г. Гомель',
         biography: {
             name: 'В августе исполняется 120 лет со дня рождения Ильи Кожара, а в марте 105 лет отметила газета гомельская прауда. Поэтому закономерно, что именно по инициативе редакции областной газеты, которая также выступила меценатом проекта, фасад дома по улице, названной в честь Героя, украсил мурал нашему известному земляку.',
@@ -187,7 +181,6 @@ var murals = [
         id: "mural7",
         panorama: 'https://i.imgur.com/p4mUrLH.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Тимофея Бородина на ул.Т.С.Бородина, 10А, г. Гомель',
         biography: {
             name: 'Новый мурал появился на одном из домов в Гомеле. Посвящён он Герою Советского Союза Тимофею Бородину. Граффити с изображением известного гомельского подпольщика находится на новостройке, выросшей на одноимённой улице в микрорайоне «Мельников Луг».',
@@ -201,7 +194,6 @@ var murals = [
         id: "mural8",
         panorama: 'https://i.imgur.com/hdCosno.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Павла Головочева на ул.Головочева, 2, г. Гомель',
         biography: {
             name: 'Ко дню военно-воздушные сил на фаседе одного из зданий открыли новый мурал великому летчику Советского Союза Павлу Головочеву.',
@@ -215,7 +207,6 @@ var murals = [
         id: "mural9",
         panorama: 'https://i.imgur.com/e2uRBYw.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Бориса Царикова на ул.Царикова, 3, г. Гомель',
         biography: {
             name: 'Ко дню независимости в Гомеле появится новый мурал пионеру-герою Борису Царикову.',
@@ -229,7 +220,6 @@ var murals = [
         id: "mural10",
         panorama: 'https://i.imgur.com/dOgWCo0.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Галина Докутович на ул.Красной, 1, г. Гомель',
         biography: {
             name: 'Ко дню независимости в Гомеле появится новый мурал легендарной летчице Галине Докутович.',
@@ -243,7 +233,6 @@ var murals = [
         id: "mural11",
         panorama: 'https://i.imgur.com/E7c9ot2.jpeg',
         hasPanorama: true,
-        hasGame: false,
         info: 'Изображение Ивана Зайцева на ул.Октябрьская, 7, г. Ченки',
         biography: {
             name: 'В поселке под Гомелем появился мурал в честь Героя Советского Союза Ивана Зайцева',
@@ -255,9 +244,8 @@ var murals = [
         coords: [51.782459, 29.508562],
         image: 'images/korzunmural.png',
         id: "mural12",
-        panorama: '',
+        panorama: 'https://i.imgur.com/1uQyb6E.png',
         hasPanorama: false,
-        hasGame: false,
         info: 'Изображение Андрею Корзуну на ул.Корзуна, 45, г. Наровля',
         biography: {
             name: 'В Наровле появился мурал, посвященный герою Великой Отечественной войны Андрею Корзуну',
@@ -269,9 +257,8 @@ var murals = [
         coords: [52.448830, 30.967735],
         image: 'images/gorbatov.jpg',
         id: "mural13",
-        panorama: '',
+        panorama: 'https://i.imgur.com/1uQyb6E.png',
         hasPanorama: false,
-        hasGame: false,
         info: 'Изображение Александра Горбатова по пр-ту Космонавтов, 32, г. Гомель',
         biography: {
             name: 'В преддверии празднования 81-й годовщины освобождения Гомеля от немецко-фашистских захватчиков поступило предложение о создании мурала в честь Героя Советского Союза Александра Горбатова.',
@@ -373,19 +360,13 @@ function launchConfetti() {
             document.getElementById('modal-bio').innerText = mural.biography.bio;
             document.getElementById('muralModal').style.display = "block";
 
-    if (mural.hasGame) {
-        modalTitle.innerText = mural.biography.name;
-        document.getElementById('modal-content').innerHTML = `
-            <iframe src="${mural.gameUrl}" style="width:100%; height:600px; border:none;"></iframe>
-        `;
-        modal.style.display = "block";
-    } else if (mural.hasPanorama) {
+    if (mural.hasPanorama) {
         pannellum.viewer('panorama', {
             type: 'equirectangular',
             panorama: mural.panorama,
             autoLoad: true,
             showZoomCtrl: false
-                });
+        });
         panoramaContainer.style.display = "block";
     } else {
         panoramaContainer.style.display = "none";
@@ -567,6 +548,8 @@ window.addEventListener('scroll', function() {
         });
     }
 
+});
+
 document.querySelectorAll('.event-card').forEach(card => {
     card.addEventListener('mouseover', () => {
         card.style.transform = 'scale(1.05)';
@@ -576,4 +559,4 @@ document.querySelectorAll('.event-card').forEach(card => {
         card.style.transform = 'scale(1)';
     });
 });
-});
+
