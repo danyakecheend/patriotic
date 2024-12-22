@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Патриотический портал Гомельской области</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/pannellum/build/pannellum.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/pannellum/build/pannellum.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Пул перспективных мест для муралов</h1>
+        <button id="language-toggle" class="language-btn" title="Переключить язык">Белорусский язык</button>
+    </header>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="mural-map_ru.html">Карта муралов</a>
+        <a href="history_ru.html">История</a>
+        <a href="potential-places_ru.html">Перспективные места</a>
+        <a href="news_ru.html">События</a>
+        <a href="feedback_ru.html">Обратная связь</a>
+    </nav>
+
+ <div id="particles-js"></div>
+ <button id="toggle-music-btn" title="Музыка">&#128266;</button>
+
+ <div id="muralModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="Mural Image" class="modal-img">
+
+        <div class="modal-bio">
+            <h3>Описание места</h3>
+            <p id="modal-bio"></p>
+        </div>
+
+        <p id="modal-description"></p>
+        <div id="panorama-container">
+            <div id="panorama"></div> 
+        </div>
+
+        <button id="route-btn" class="btn-route">Проложить маршрут</button>
+    </div>
+</div>
+
+    <section class="mural-intro">
+        <div class="mural-3d-marker">
+            <div class="marker-shape2"></div>
+        </div>
+
+        <div class="mural-info">
+            <h2>Перспективные места для новых муралов</h2>
+            <p>В Гомеле более 50 улиц носят имена героев, чьи подвиги навсегда вписаны в историю, но лишь около десяти из них украшены муралами. Но каждая из этих улиц могла бы ожить благодаря искусству, где яркие панно на стенах рассказали бы истории о смелости и героизме, превращая город в живую галерею под открытым небом. Поэтому представляю вам карту и интерактивную таблицу перспективных мест для новых муралов.</p>
+        </div>
+    </section>
+    <div class="container">
+ <section id="mural-map-section">
+    <h2><center>Карта перспективных мест Гомеля</h2>
+            <div id="map"></div>
+            </div>
+        </section>
+
+<div class="table-container">
+    <table class="mural-table">
+        <tr>
+            <th>Фото места</th>
+            <th>Адрес</th>
+            <th>Описание</th>
+        </tr>
+        <tr id="mural11">
+            <td><img src="images/zhykovagor.jpg" alt="Место 11" class="mural-image"></td>
+            <td>ул. Жукова, 2</td>
+            <td>Здание расположено на перекрестке оживленных улиц, что гарантирует постоянный поток внимания к муралу.</td>
+        </tr>
+         <tr id="mural2">
+            <td><img src="images/phedosenko2.jpg" alt="Место 2" class="mural-image"></td>
+            <td>ул. Федосенко, 2</td>
+            <td>Боковой фасад этого здания виден с одной из центральных улиц города, что делает его идеальным для масштабного мурала, привлекающего внимание водителей.</td>
+        </tr>
+         <tr id="mural3">
+            <td><img src="images/dindi.jpg" alt="Место 3" class="mural-image"></td>
+            <td>ул. Советская, 136/2 (около ул.Дынды)</td>
+            <td>Дом расположен на главной улице города, и мурал станет частью городской инфраструктуры, видимой каждому прохожему.</td>
+        </tr>
+        <tr id="mural4">
+            <td><img src="images/antoshkinavert.jpg" alt="Место 4" class="mural-image"></td>
+            <td>ул. Антошкина</td>
+            <td>Мурал на этом доме будет отлично виден с близлежащей железной дороги, создавая культурную атмосферу для проезжающих.</td>
+        </tr>
+        <tr id="mural5">
+            <td><img src="images/efremovagoriz.jpg" alt="Место 5" class="mural-image"></td>
+            <td>ул. М.Г.Ефремова, 15А</td>
+            <td>Мурал здесь будет отлично виден с ближайшей автобусной остановки, оживляя обычный день горожан.</td>
+        </tr>
+        <tr id="mural6">
+            <td><img src="images/karastoyanovagor.jpg" alt="Место 6" class="mural-image"></td>
+            <td>ул. Карастояновой, 4</td>
+            <td>Этот дом стоит в окружении зелени, и мурал станет ярким контрастом на фоне природного пейзажа.</td>
+        </tr>
+        <tr id="mural7">
+            <td><img src="images/gorbatovagor.jpg" alt="Место 7" class="mural-image"></td>
+            <td>ул. Горбатова, 35</td>
+            <td>Мурал на этом доме будет гармонировать с соседними зданиями, создавая единую художественную композицию.</td>
+        </tr>
+        <tr id="mural8">
+            <td><img src="images/sviridovagor.jpg" alt="Место 8" class="mural-image"></td>
+            <td>ул. Свиридова, 1Г</td>
+            <td>Здание находится в районе с высокой плотностью застройки, что сделает мурал заметным с различных точек.</td>
+        </tr>
+        <tr id="mural9">
+            <td><img src="images/golovachkogor.jpg" alt="Место 9" class="mural-image"></td>
+            <td>ул. Мазурова, 59Г (около ул.Головацкого)</td>
+            <td>Здание находится рядом с учебным заведением, и мурал может стать источником вдохновения для школьников.</td>
+        </tr>
+        <tr id="mural10">
+            <td><img src="images/talalih167agor.jpg" alt="Место 10" class="mural-image"></td>
+            <td>ул. Барыкина 167 (около ул.Талалихина)</td>
+            <td>Большая площадь стены позволяет разместить крупное изображение, которое привлечет внимание жителей соседних домов.</td>
+        </tr>
+        <tr id="mural1">
+            <td><img src="images/telegena7.jpg" alt="Место 1" class="mural-image"></td>
+            <td>ул. Телегена, 7</td>
+            <td>Торец высотного здания в этом месте идеально подойдет для нового мурала, благодаря тому, что изображение хорошо будет видно с центральной железной дороги.</td>
+        </tr>
+        <tr id="mural12">
+            <td><img src="images/lizukovigor.jpg" alt="Место 12" class="mural-image"></td>
+            <td>ул. Братьев Лизюковых, 30А</td>
+            <td>Фасад дома направлен на детскую площадку, где мурал может стать частью воспитательного процесса для детей.</td>
+        </tr>
+        <tr id="mural13">
+            <td><img src="images/denisenkogor.jpg" alt="Место 13" class="mural-image"></td>
+            <td>ул. Григория Денисенко, 82</td>
+            <td>Этот дом находится напротив крупной транспортной развязки, и мурал будет заметен для всех, проезжающих мимо.</td>
+        </tr>
+        <tr id="mural14">
+            <td><img src="images/penznyakovagor.jpg" alt="Место 14" class="mural-image"></td>
+            <td>ул. Д.Н.Пенязькова, 21</td>
+            <td>Дом расположен в жилом квартале, и мурал оживит пространство, создавая культурную атмосферу для местных жителей.</td>
+        </tr>
+        <tr id="mural15">
+            <td><img src="images/belogogor.jpg" alt="Место 15" class="mural-image"></td>
+            <td>ул. Белого, 52 (около ул. И.Е.Каленикова)</td>
+            <td>Фасад здания виден с местного велосипедного маршрута, и мурал привлечет внимание активных горожан.</td>
+        </tr>
+        <tr id="mural16">
+            <td><img src="images/oskinagor.jpg" alt="Место 16" class="mural-image"></td>
+            <td>ул. Оськина, 4</td>
+            <td>Здание расположено у входа в спальный район, и мурал станет своеобразной 'визитной карточкой' этого места.</td>
+        </tr>
+        <tr id="mural17">
+            <td><img src="images/skleznevagor.jpg" alt="Место 17" class="mural-image"></td>
+            <td>ул. Склезнева, 4</td>
+            <td>Торец дома выходит на проезжую часть, где ежедневно большой трафик автомобилей, едущих из-за города, гарантирует постоянную видимость мурала.</td>
+        </tr>
+        <tr id="mural18">
+            <td><img src="images/gercenagor.jpg" alt="Место 18" class="mural-image"></td>
+            <td>ул. Герцена, 8 (около ул. Шандалова)</td>
+            <td>Здание расположено напротив популярного кафе и кинотеатра, поэтому мурал будет заметен посетителям, сидящим на летних террасах.</td>
+        </tr>
+    </table>
+</div>
+
+
+   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+   <script src="script2.js"></script>
+
+    <footer>
+        <p>© 2024 Патриотический портал г.Гомеля</p>
+    </footer>
+
+</body>
+</html>

@@ -1,24 +1,24 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars(trim($_POST['name']));
+    $email = htmlspecialchars(trim($_POST['email']));
+    $message = htmlspecialchars(trim($_POST['message']));
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['consent'])) {
+        $date = date('Y-m-d H:i:s');
+        $feedback = "Дата: $date\nИмя: $name\nEmail: $email\nСообщение: $message\n\n";
 
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $message = htmlspecialchars($_POST['message']);
+        $filePath = 'feedback.txt';
 
-    $feedback = "Имя: $name\nEmail: $email\nСообщение: $message\n---\n";
-
-
-    $file = 'feedback.txt';
-
-    file_put_contents($file, $feedback, FILE_APPEND | LOCK_EX);
-    
-
-    echo "<h2>Спасибо за ваше сообщение!</h2>";
-    echo "<a href='index.html'>Вернуться на главную страницу</a>";
+        if (file_put_contents($filePath, $feedback, FILE_APPEND | LOCK_EX)) {
+            echo "Спасибо! Ваше сообщение отправлено.";
+        } else {
+            echo "Произошла ошибка при сохранении сообщения. Попробуйте позже.";
+        }
+    } else {
+        echo "Вы должны согласиться на обработку персональных данных.";
+    }
 } else {
-
-    echo "<h2>Ошибка! Пожалуйста, заполните форму.</h2>";
-    echo "<a href='index.html'>Вернуться на главную страницу</a>";
+    echo "Некорректный метод запроса.";
 }
 ?>

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var closePanelButton = document.getElementById('close-panel');
     var routeBtn = document.getElementById('route-btn');
     var userLocationIcon = L.divIcon({
-        html: '<img src="images/location.png" class="rotating-marker" alt="Ваше местоположение">',
+        html: '<img src="images/location.png" class="rotating-marker" alt="Ваша месцазнаходжанне">',
         className: '',
         iconSize: [48, 48],
         iconAnchor: [24, 24]
@@ -24,14 +24,14 @@ document.addEventListener('DOMContentLoaded', function() {
             navigator.geolocation.getCurrentPosition(function(position) {
                 var userLocation = [position.coords.latitude, position.coords.longitude];
                 L.marker(userLocation, { icon: userLocationIcon }).addTo(map)
-                    .bindPopup("Вы здесь").openPopup();
+                    .bindPopup("Ваша месцазнаходжанне").openPopup();
 
                 map.setView(userLocation, 13);
             }, function(error) {
-                console.log("Ошибка определения местоположения: " + error.message);
+                console.log("Памылка вызначэння месцазнаходжання: " + error.message);
             });
         } else {
-            alert("Геолокация не поддерживается этим браузером.");
+            alert("Геалакацыя не падтрымліваецца гэтым браўзэрам.");
         }
     }
     locateUser();
@@ -67,7 +67,7 @@ function addCloseButtonToRoutePanel() {
 
         if (routeContainer && !document.querySelector('.close-route')) {
             const closeButton = document.createElement('button');
-            closeButton.innerText = 'Закрыть маршрут';
+            closeButton.innerText = 'Закрыць маршрут';
             closeButton.className = 'close-route';
 
             closeButton.onclick = function() {
@@ -220,10 +220,10 @@ var murals = [
         image: 'images/lizukovigor.jpg',
         id: "mural12",
         panorama: 'https://i.imgur.com/6HcJQR7.jpeg',
-        info: 'Новое девятиэтажное здание на ул. Братьев Лизюковых, 30А',
+        info: 'Новы дзевяціпавярховы будынак на вул. Братоў Лізюковых, 30А',
         biography: {
-            name: 'Новое девятиэтажное здание на ул. Братьев Лизюковых, 30А',
-            bio: 'Фасад дома направлен на детскую площадку, где мурал может стать частью воспитательного процесса для детей.',
+            name: 'Новы дзевяціпавярховы будынак на вул. Братоў Лізюковых, 30А',
+            bio: 'Фасад дома накіраваны на дзіцячую пляцоўку, дзе мурал можа стаць часткай выхаваўчага працэсу для дзяцей.',
             photo: 'images/lizukovavert.jpg'
         }
     },
@@ -403,7 +403,7 @@ murals.forEach(function (mural) {
                     createRoute(userLocation, mural.coords);
                     document.getElementById('muralModal').style.display = "none";
                 }, function(error) {
-                    console.log("Ошибка получения местоположения: " + error.message);
+                    console.log("Памылка атрымання месцазнаходжання: " + error.message);
                 });
             };
 
@@ -430,7 +430,7 @@ murals.forEach(function (mural) {
         });
 
         modal.style.display = "block";
-        console.log('Панорама должна загрузиться:', mural.panorama);
+        console.log('Панарама павінна загрузіцца:', mural.panorama);
     });
 });
 
@@ -586,9 +586,10 @@ document.querySelectorAll('.event-card').forEach(card => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-
+    // 1. Определяем текущий язык (по умолчанию — русский)
     const savedLang = localStorage.getItem('lang') || 'ru';
 
+    // 2. Если пользователь не на своей языковой версии, перенаправляем его
     const currentPage = window.location.pathname;
     if (currentPage.endsWith('index.html') && savedLang === 'by') {
         window.location.href = 'index_by.html';
@@ -627,5 +628,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
 

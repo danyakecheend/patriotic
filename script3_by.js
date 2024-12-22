@@ -15,7 +15,7 @@ audio.loop = true;
 
 document.addEventListener('click', function () {
     audio.play().catch(function(error) {
-        console.log("Не удалось воспроизвести аудио: " + error);
+        console.log("Не атрымалася прайграць аўдыё: " + error);
     });
 }, { once: true });
 
@@ -189,10 +189,9 @@ if (document.getElementById('particles-js')) {
     }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Определяем текущий язык (по умолчанию — русский)
+
     const savedLang = localStorage.getItem('lang') || 'ru';
 
-    // 2. Если пользователь не на своей языковой версии, перенаправляем его
     const currentPage = window.location.pathname;
     if (currentPage.endsWith('index.html') && savedLang === 'by') {
         window.location.href = 'index_by.html';
@@ -231,6 +230,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
 
 

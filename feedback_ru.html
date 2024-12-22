@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Патриотический портал Гомельской области</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Свяжитесь с нами</h1>
+        <button id="language-toggle" class="language-btn" title="Переключить язык">Белорусский язык</button>
+    </header>
+
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="mural-map_ru.html">Карта муралов</a>
+        <a href="history_ru.html">История</a>
+        <a href="potential-places_ru.html">Перспективные места</a>
+        <a href="news_ru.html">События</a>
+        <a href="feedback_ru.html">Обратная связь</a>
+    </nav>
+
+        <div id="particles-js"></div>
+        <button id="toggle-music-btn" title="Музыка">&#128266;</button>
+
+    <div class="contact-container">
+
+        <div class="contact-image">
+            <img src="images/mec.jpg" alt="Свяжитесь с нами">
+        </div>
+
+        <div class="contact-form">
+            <h2>Мы всегда готовы помочь!</h2>
+            <p>Заполните форму, и мы рассмотрим ваше сообщение в ближайшее время!</p>
+
+            <form action="feedback.php" method="POST">
+    <label for="name">Имя</label>
+    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+
+    <label for="email">Электронная почта</label>
+    <input type="email" id="email" name="email" placeholder="Ваш email" required>
+
+    <label for="message">Сообщение</label>
+    <textarea id="message" name="message" placeholder="Ваше сообщение" rows="5" required></textarea>
+
+    <div class="checkbox-container">
+        <input type="checkbox" id="consent" name="consent" required>
+        <label for="consent">Согласен на обработку персональных данных</label>
+    </div>
+
+    <button type="submit" id="submit-btn" disabled>Отправить</button>
+</form>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Патриотический портал г.Гомеля</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script src="script3.js"></script>
+</body>
+</html>

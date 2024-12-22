@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Патрыятычны партал Гомельскай вобласці</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/pannellum/build/pannellum.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/pannellum/build/pannellum.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Карта муралаў Гомельскай вобласці</h1>
+        <button id="language-toggle" class="language-btn" title="Пераключыць мову">Руская мова</button>
+    </header>
+
+    <nav>
+        <a href="index_by.html">Галоўная</a>
+        <a href="mural-map_by.html">Карта муралаў</a>
+        <a href="history_by.html">Гісторыя</a>
+        <a href="potential-places_by.html">Перспектыўныя месцы</a>
+        <a href="news_by.html">Падзеі</a>
+        <a href="feedback_by.html">Зваротная сувязь</a>
+    </nav>
+
+ <div id="particles-js"></div>
+ <button id="toggle-music-btn" title="Музыка">&#128266;</button>
+
+<div id="muralModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-image" src="" alt="Mural Image" class="modal-img">
+
+        <div class="modal-bio">
+            <h3>Біяграфія</h3>
+            <p id="modal-bio"></p>
+        </div>
+
+        <p id="modal-description"></p>
+        <div id="panorama-container">
+            <div id="panorama"></div>
+        </div>
+
+        <button id="route-btn" class="btn-route">Пракласці маршрут</button>
+    </div>
+</div>
+
+    <section class="mural-intro">
+        <div class="mural-3d-marker">
+            <div class="marker-shape"></div>
+        </div>
+
+        <div class="mural-info">
+            <h2>Муралы Гомельскай вобласці</h2>
+            <p>Мурал — гэта не проста вялікая выява, намаляваная на сцяне, гэта арыгінальны спосаб аддаць даніну памяці абаронцам Радзімы, вялікім героям Чырвонай арміі, якія падчас Вялікай Айчыннай вайны вызвалілі нашу краіну. У самім Гомелі налічваецца больш за 10 муралаў, прысвечаных героям Вялікай Айчыннай вайны і значным асобам.</p>
+        </div>
+    </section>
+    <div class="container">
+ <section id="mural-map-section">
+    <h2><center>Карта муралаў</h2>
+            <div id="map"></div>
+            </div>
+        </section>
+<div class="table-container">
+    <table class="mural-table">
+        <tr>
+            <th>Фота месца</th>
+            <th>Адрас</th>
+            <th>Апісанне</th>
+        </tr>
+        <tr id="mural11">
+            <td><img src="images/barikinmural.jpg" alt="Место 11" class="mural-image"></td>
+            <td>Выява Емяльяна Барыкіна на вул. Барыкіна, 94, г. Гомель</td>
+            <td>Напярэдадні 75-й гадавіны Перамогі ў Вялікай Айчыннай на доме № 94 па вуліцы Барыкіна быў створаны мурал з выявай Емяльяна Ігнатавіча.</td>
+        </tr>
+         <tr id="mural2">
+            <td><img src="images/rokosovskimural.jpg" alt="Место 2" class="mural-image"></td>
+            <td>Выява Канстанціна Ракасоўскага на вул. Ільіча, 106, г. Гомель</td>
+            <td>У Гомелі з'явіўся 30 – метровы мурал Канстанціна Ракасоўскага-легендарнага палкаводца, двойчы Героя Савецкага Саюза.</td>
+        </tr>
+         <tr id="mural3">
+            <td><img src="images/zebnickymural.jpg" alt="Место 3" class="mural-image"></td>
+            <td>Выява Мікалая Зебніцкага на вул. Савецкай, 145, г. Гомель</td>
+            <td>Напярэдадні 80-годдзя вызвалення Гомеля ад нямецка-фашысцкіх захопнікаў быў адкрыты мурал у гонар Героя Савецкага Саюза Мікалая Васільевіча Зебніцкага.</td>
+        </tr>
+        <tr id="mural4">
+            <td><img src="images/fedunskiy.jpg" alt="Место 4" class="mural-image"></td>
+            <td>Выява Івана Фядзюнінскага на вул. Савецкай, 157/2, г. Гомель</td>
+            <td>Напярэдадні 80-годдзя вызвалення Гомеля ад нямецка-фашысцкіх захопнікаў у горадзе з'явіўся новы мурал у гонар генерала арміі Героя Савецкага Саюза ганаровага грамадзяніна Гомеля Івана Іванавіча Фядзюнінскага.</td>
+        </tr>
+        <tr id="mural5">
+            <td><img src="images/muralMazyrov.jpg" alt="Место 5" class="mural-image"></td>
+            <td>Выява Кірыла Мазурава на вул. Мазурава, 4к / 2, г. Гомель</td>
+            <td>Да 800 годдзя горада тарцы двух дамоў на вуліцы Мазурава ўпрыгожыла чарговае графіці з выявай знакавай для Гомеля асобы. Мурал прысвечаны савецкаму партыйнаму дзеячу Кірылу Мазураву.</td>
+        </tr>
+        <tr id="mural6">
+            <td><img src="images/kozhyrmurall.jpg" alt="Место 6" class="mural-image"></td>
+            <td>Выява Ілля Кожара на вул. Кожара, 2, г. Гомель</td>
+            <td>У жніўні спаўняецца 120 гадоў з дня нараджэння Іллі Кожара, а ў сакавіку 105 гадоў адзначыла газета гомельская праўда. Таму заканамерна, што менавіта па ініцыятыве рэдакцыі абласной газеты, якая таксама выступіла мецэнатам праекта, фасад дома па вуліцы, названай у гонар Героя, упрыгожыў мурал нашаму вядомаму земляку.</td>
+        </tr>
+        <tr id="mural7">
+            <td><img src="images/borodinmural.jpg" alt="Место 7" class="mural-image"></td>
+            <td>Выява Цімафея Барадзіна на вул. т. с. Барадзіна, 10А, г. Гомель</td>
+            <td>Новы мурал з'явіўся на адным з дамоў у Гомелі. Прысвечаны Ён Герою Савецкага Саюза Цімафею Барадзіну. Графіці з выявай вядомага гомельскага падпольшчыка знаходзіцца на новабудоўлі, якая вырасла на аднайменнай вуліцы ў мікрараёне «Мельнікаў Луг».</td>
+        </tr>
+        <tr id="mural8">
+            <td><img src="images/golovochevmural.jpg" alt="Место 8" class="mural-image"></td>
+            <td>Выява Паўла Галавачова на вул. Галавачова, 2, г. Гомель</td>
+            <td>Да Дня Ваенна-паветраныя сіл на фасадзе аднаго з будынкаў адкрылі новы мурал вялікаму лётчыку Савецкага Саюза Паўлу Галавачаву.</td>
+        </tr>
+        <tr id="mural9">
+            <td><img src="images/carikovmural.jpg" alt="Место 9" class="mural-image"></td>
+            <td>Выява Барыса Царыкава на вул. Царыкава, 3, г. Гомель</td>
+            <td>Да Дня Незалежнасці Рэспублікі Беларусь У Гомелі з'явіўся новы мурал прысвечаны піянеру-герою Савецкага Саюза Барысу Царыкаву.</td>
+        </tr>
+        <tr id="mural10">
+            <td><img src="images/dokutovich.jpg" alt="Место 10" class="mural-image"></td>
+            <td>Выява Галіна Дакутовіч на вул. Чырвонай, 1, г. Гомель</td>
+            <td>Да Дня Незалежнасці Рэспублікі Беларусь У Гомелі з'явіцца новы мурал прысвечаны легендарнай лётчыцы Савецкага Саюза, ураджэнцы г. Гомеля, галіне Дакутовіч.</td>
+        </tr>
+        <tr id="mural1">
+            <td><img src="images/zaicev.mural.jpg" alt="Место 11" class="mural-image"></td>
+            <td>Малюнак Івана Зайцава на вул. Кастрычніцкая, 7, п. Чонкі</td>
+            <td>У пасёлку пад Гомелем з'явіўся мурал у гонар Героя Савецкага Саюза Івана Зайцава ў доме на той вуліцы, дзе ён нарадзіўся.</td>
+        </tr>
+        <tr id="mural12">
+            <td><img src="images/korzunmural.png" alt="Место 12" class="mural-image"></td>
+            <td>Выява Андрэя Корзуна на вул. Корзуна, 45, г. Нароўля</td>
+            <td>У Нароўлі з'явіўся мурал, прысвечаны герою Вялікай Айчыннай вайны, ураджэнцу Нараўляншчыны, Андрэю Корзуну.</td>
+        </tr>
+        <tr id="mural13">
+            <td><img src="images/gorbatov.jpg" alt="Место 13" class="mural-image"></td>
+            <td>Выява Аляксандра Гарбатава па пр-ту Касманаўтаў, 32, г. Гомель</td>
+            <td>Напярэдадні святкавання 81-й гадавіны вызвалення Гомеля ад нямецка-фашысцкіх захопнікаў паступіла прапанова аб стварэнні мурала ў гонар Героя Савецкага Саюза Аляксандра Гарбатава.</td>
+        </tr>
+        <tr id="mural14">
+            <td><img src="images/gorbatov.jpg" alt="Место 14" class="mural-image"></td>
+            <td>Выява Фёдара Паўлоўскага па вул. Бумажкова, 6, п.г.т. Октябрьский</td>
+            <td>У пасёлку гарадскога тыпу Акцябрскі з'явіўся новы мурал, прысвечаны ўраджэнцу пасёлка, Фёдару Паўлоўскаму.</td>
+        </tr>
+        <tr id="mural15">
+            <td><img src="images/gorbatov.jpg" alt="Место 15" class="mural-image"></td>
+            <td>Выява Ціхана Бумажкова па вул. Бумажкова, 4, п.г.т. Октябрьский</td>
+            <td>У пасёлку гарадскога тыпу Акцябрскі з'явіўся новы мурал, прысвечаны ўраджэнцу пасёлка, Ціхану Бумажкову.</td>
+        </tr>
+         <tr id="mural16">
+            <td><img src="images/zhlobin.jpg" alt="Место 16" class="mural-image"></td>
+            <td>Выява Васіля Казлова на вул.Казлова, 6, г. Жлобін</td>
+            <td>У горадзе Жлобіне напярэдадні святкавання 80-й гадавіны вызвалення Беларусі ад нямецка-фашысцкіх захопнікаў з'явіўся новы мурал, прысвечаны Васіллю Казлову.</td>
+        </tr>
+        <tr id="mural17">
+            <td><img src="images/zhlobinpetr.png" alt="Место 17" class="mural-image"></td>
+            <td>Выява Леаніда Пятроўскага на вул. ул. Петровскага, 31, г. Жлобін </td>
+            <td>Напярэдадні святкавання 80-й гадавіны асобніцтва Беларусі ад нямецка-фашысцкіх захопнікаў, у Жлобіне адкрылі новы ў гонар Леані Пятроўскага.</td>
+        </tr>
+        <tr id="mural18">
+            <td><img src="images/dobrush.jpg" alt="Место 18" class="mural-image"></td>
+            <td>Выява Мікалая Міхайлашава на вул. Савецкая 2, г. Добруш</td>
+            <td>Напярэдадні святкавання 80-й гадавіны асобніцтва Беларусі ад нямецка-фашысцкіх захопнікаў, у Жлобіне адкрылі новы ў гонар Леані Пятроўскага..</td>
+        </tr>
+    </table>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script_by.js"></script>
+
+    <footer>
+        <p>© 2024 Патрыятычны партал г.Гомеля</p>
+    </footer>
+
+</body>
+</html>
