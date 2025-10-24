@@ -320,7 +320,7 @@ var murals = [
         coords: [52.414083, 30.957414],
         image: 'images/zhykov.png',
         id: "mural19",
-        panorama: 'https://i.imgur.com/R9SOaEE.jpeg',
+        panorama: 'https://i.imgur.com/GvEZou5.jpeg',
         hasPanorama: true,
         info: 'Изображение Георгия Жукова на ул. Жукова, 2, г. Гомель',
         biography: {
