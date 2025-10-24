@@ -333,7 +333,7 @@ var murals = [
         coords: [52.395548, 30.953848],
         image: 'images/denisenko.png',
         id: "mural20",
-        panorama: 'https://i.imgur.com/ez4wI7U.jpeg',
+        panorama: 'https://i.imgur.com/qEDT9yj.jpeg',
         hasPanorama: true,
         info: 'Изображение Григория Денисенко на ул. Григория Денисенко, 82, г. Гомель',
         biography: {
@@ -346,7 +346,7 @@ var murals = [
         coords: [52.423588, 31.006927],
         image: 'images/katynin.png',
         id: "mural21",
-        panorama: 'https://i.imgur.com/b0BBgVh.jpeg',
+        panorama: 'https://i.imgur.com/OF39qpi.jpeg',
         hasPanorama: true,
         info: 'Изображение Ильи Катунина на ул. Катунина, 2, г. Гомель',
         biography: {
