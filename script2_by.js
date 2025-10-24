@@ -204,18 +204,6 @@ var murals = [
         }
     },
         {
-        coords: [52.414065, 30.957393],
-        image: 'images/zhykovagor.jpg',
-        id: "mural11",
-        panorama: 'https://i.imgur.com/NS67M3C.jpeg',
-        info: 'Новое пятиэтажное здание на ул. Жукова, 2',
-        biography: {
-            name: 'Новое пятиэтажное здание на ул. Жукова, 2',
-            bio: 'Здание расположено на перекрестке оживленных улиц, что гарантирует постоянный поток внимания к муралу.',
-            photo: 'images/Zhykovavert.jpg'
-        }
-    },
-        {
         coords: [52.403661, 30.944062],
         image: 'images/lizukovigor.jpg',
         id: "mural12",
@@ -225,18 +213,6 @@ var murals = [
             name: 'Новы дзевяціпавярховы будынак на вул. Братоў Лізюковых, 30А',
             bio: 'Фасад дома накіраваны на дзіцячую пляцоўку, дзе мурал можа стаць часткай выхаваўчага працэсу для дзяцей.',
             photo: 'images/lizukovavert.jpg'
-        }
-    },
-        {
-        coords: [52.395564, 30.953770],
-        image: 'images/denisenkogor.jpg',
-        id: "mural13",
-        panorama: 'https://i.imgur.com/svL9Ma9.jpeg',
-        info: 'Десятиэтажное здание на ул. Григория Денисенко, 82',
-        biography: {
-            name: 'Десятиэтажное здание на ул. Григория Денисенко, 82',
-            bio: 'Этот дом находится напротив крупной транспортной развязки, и мурал будет заметен для всех, проезжающих мимо.',
-            photo: 'images/denisenkovert.jpg'
         }
     },
         {
@@ -586,10 +562,10 @@ document.querySelectorAll('.event-card').forEach(card => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Определяем текущий язык (по умолчанию — русский)
+
     const savedLang = localStorage.getItem('lang') || 'ru';
 
-    // 2. Если пользователь не на своей языковой версии, перенаправляем его
+
     const currentPage = window.location.pathname;
     if (currentPage.endsWith('index.html') && savedLang === 'by') {
         window.location.href = 'index_by.html';
